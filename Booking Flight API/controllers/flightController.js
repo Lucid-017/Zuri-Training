@@ -3,7 +3,7 @@ const flightModel=require('../models/Flight')
 const {writeDataToFile, getPostData}= require('../util')
 
 // get all flights
-async function getFlights(req,res){//function to get all flight dtat
+async function getFlights(req,res){//function to get all flight data
     // in any case that we are still fething the data
     const flights =await flightModel.allFlights()
     try{
@@ -16,7 +16,7 @@ async function getFlights(req,res){//function to get all flight dtat
 }
 
 // get flight by id
-async function getFlight(req,res,id){//function to get all flight dtat
+async function getFlight(req,res,id){//function to get flight data by id
     // in any case that we are still fething the data
     const flights =await flightModel.flightById(id)
     
@@ -37,7 +37,9 @@ async function getFlight(req,res,id){//function to get all flight dtat
 // post flight to database
 async function postFlight(req,res){//function to post flights(Post request)
      try{
+        // we want to create a body and assign it to our getpostData util function 
         const body=await getPostData(req)
+        // deconstruct data we need from the body whih will represnt our flight data
         const {title,time,price,date}=JSON.parse(body)
 
         const flightDemo={
@@ -46,6 +48,8 @@ async function postFlight(req,res){//function to post flights(Post request)
             price,
             date
         }
+        // then create a new flight variable that takes in our flight json data
+        // then uses our model function to then parses our flightdemo and inserts it our database
         const newFlight= await flightModel.createFlight(flightDemo)
         console.log('demo',newFlight)
         // 201 are used for post requests
