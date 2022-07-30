@@ -1,0 +1,28 @@
+[
+    {
+        "id": "1",
+        "title": "flight to canada",
+        "time": "1pm",
+        "price": "26000",
+        "date": "26-06-2022"
+    },
+    {
+        "id": "2",
+        "title": "flight to west virginia",
+        "time": "3pm",
+        "price": "12000",
+        "date": "29-07-2022"
+    },
+    {
+        "id": "0bca464d-2cd0-4964-a70d-00ed00ef63c3",
+        "title": "flight to london",
+        "time": "3pm",
+        "price": "12000"
+    },
+    {
+        "id": "575334d5-1d62-420d-b8ab-f714006ad8af",
+        "title": "flight to Birhmingham ",
+        "time": "4:50pm ",
+        "price": "12000"
+    }
+]
